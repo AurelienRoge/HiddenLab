@@ -1,0 +1,208 @@
+/**********************************************
+* footer.css
+***********************************************/
+
+/***************
+* main
+****************/
+footer {
+    background-color: #34495e;
+}
+
+.square {
+    width: 100%;
+}
+
+
+/***************
+* grid
+****************/
+.footer-grid {
+    width: 75%;
+    max-width: 1250px;
+    margin: 50px auto 50px auto;
+    display: grid;
+    grid-gap: 25px;
+    grid-template-columns: repeat(auto-fit, minmax(235px, 1fr));
+    /*grid-template: "a b c" auto;*/
+    grid-auto-rows: auto;
+    overflow: hidden;
+    transition: ease all .5s;
+}
+
+.footer-grid-element {
+    display: flex;
+    flex-direction: column;
+    transition: ease all .5s;
+}
+
+.footer-grid-element h3 {
+    margin: 0;
+    text-align: center;
+    font-family: 'BebasNeue-Regular', sans-serif;
+    font-size: 2.35rem;
+    color: #FCF0CC;
+    letter-spacing: 3.5px;
+    padding-bottom: 5px;
+}
+
+
+
+.footer-grid-element a:hover {
+    color: #EF798A;
+}
+
+/***************
+* footer logo
+****************/
+.footer-logo {
+    height: 250px;
+}
+
+/***************
+* links
+****************/
+.footer-links {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-links a {
+    text-align: center;
+    font-family: 'Roboto-Light', sans-serif;
+    font-size: 1.15rem;
+    color: #FCF0CC;
+    text-decoration: none !important;
+    padding: 5px 0 5px;
+    letter-spacing: 1.75px;
+    line-height: 35px;
+}
+
+.footer-url a {
+    color: white;
+    padding-bottom: 15px;
+    font-size: 1.1rem;
+    max-width: 11rem;
+    text-decoration: none;
+}
+
+/***************
+* contact us
+****************/
+.at {
+    height: 50px;
+}
+.email, .twitter, .fb{
+    display: flex;
+    align-items: center;
+    margin: 5px 0 5px 0;
+    justify-content: flex-start;
+}
+.ltwitter, .lfb, .lemail {
+    height: 35px;
+    margin-right: 10px;
+}
+.txtemail, .txtfb, .txttwitter {
+    margin-top: auto;
+    margin-bottom: auto;
+}
+.contact {
+    margin-left: 60px;
+}
+
+.footer-grid-element span {
+    margin: 0;
+    text-align: center;
+    font-family: 'Roboto-Light', sans-serif;
+    font-size: 1.15rem;
+    color: #FCF0CC;
+    letter-spacing: 2px;
+}
+
+/***************
+* copyright
+****************/
+.copyright {
+    font-family: 'Roboto-Light', sans-serif;
+    letter-spacing: 1.35px;
+    background-color: #EF798A;
+    text-align: center;
+    width: 100%;
+    color: white;
+    padding-bottom: 2.5px;
+    padding-top: 2.5px;
+    font-weight: 400;
+    margin: 0;
+}
+
+
+/**********************************************
+* responsive
+***********************************************/
+
+@media only screen and (max-width: 650px) {
+    .footer-grid {
+        grid-template-columns: auto;
+    }
+    .footer-grid-element {
+        align-items: center;
+    }
+    .footer-logo {
+        height: 225px;
+    }
+}
+
+/*
+*   MOTO G4 / S5
+*/
+@media only screen and (min-height: 639px) and (max-height: 650px){
+    .copyright p {
+        font-size: 0.85rem;
+    }
+}
+
+/*
+*  PIXEL 2 / IPHONE 6/7/8 PLUS
+*/
+@media only screen and (min-height: 730px) and (max-height: 750px){
+    .copyright p {
+        font-size: 0.85rem;
+    }
+}
+
+
+/*
+*  IPHONE X | PIXEL 2XL |
+*/
+@media only screen and (min-height: 800px) and (max-height: 823px){
+    .copyright p {
+        font-size: 0.8rem;
+    }
+}
+
+/*
+*  IPHONE 6/7/8
+*/
+@media only screen and (min-height: 667px) and (max-height: 700px){
+    .copyright p {
+        font-size: 0.85rem;
+    }
+}
+
+/*
+*  IPHONE 5/SE
+*/
+@media only screen and (min-height: 568px) and (max-height: 580px){
+    .copyright p {
+        font-size: 0.75rem;
+    }
+}
+
+/*
+*  GALAXY FOLD
+*/
+@media only screen and (min-height: 653px) and (max-height: 657px){
+    .copyright p {
+        font-size: 0.85rem;
+    }
+}

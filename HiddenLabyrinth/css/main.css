@@ -1,0 +1,74 @@
+/**********************************************
+* main.css
+***********************************************/
+body {
+    background-image: url(../img/web/main-background.png);
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+main {
+    width: 85%;
+    height: auto;
+    margin: auto;
+}
+
+/***************
+* utils
+****************/
+.h-auto {
+    height: auto;
+}
+
+.flex {
+    display: flex;
+}
+
+.priority-1 {
+    order: 1;
+}
+
+.priority-2 {
+    order: 2;
+}
+
+.priority-3 {
+    order: 3;
+}
+
+.flex-grow-1 {
+    flex-grow: 1;
+}
+
+.mt-125 {
+    margin-top: 125px;
+}
+
+/***************
+* fonts
+****************/
+@font-face {
+    font-family: 'BebasNeue-Regular';
+    src: url("../fonts/BebasNeue-Regular.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: 'Roboto-Regular';
+    src: url("../fonts/RobotoCondensed-Regular.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: 'Roboto-Light';
+    src: url("../fonts/RobotoCondensed-Light.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: 'Pattaya-Regular';
+    src: url("../fonts/Pattaya-Regular.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: 'OpenSans-Regular';
+    src: url('../fonts/OpenSans-Regular.ttf') format("truetype"); 
+}

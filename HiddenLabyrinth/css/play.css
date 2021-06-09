@@ -1,0 +1,887 @@
+/*******************************************************
+*  play.css                                           
+********************************************************/
+body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    background-color: #34495e;
+}
+
+main {
+    width: 75%;
+    margin: auto;
+}
+
+:root {
+    --game-display: initial;
+    --select-difficulty-display: none;
+    --background-video-loading-display: none;
+    --background-video-padding: 56.25%;
+
+    --help-popup-height: 65%;
+    --help-popup-width: 75%;
+
+    --difficulty-popup-height: 65%;
+    --difficulty-popup-width: 75%;
+}
+
+.game-line {
+    margin-bottom: 30px;
+    border-top: 1px solid #FCF0CC;
+}
+
+/**********************
+* game container
+***********************/
+.background-video-container {
+    width: 75%;
+    border-radius: 15px;
+    margin: auto;
+    position: relative;
+    overflow: hidden;
+    padding-top: var(--background-video-padding); /* 16:9 Aspect Ratio */
+}
+
+.background-video-loading {
+    display: var(--background-video-loading-display);
+}
+
+.background-video-border {
+    border: 4px solid #FCF0CC;
+    border-radius: 25px;  
+}
+
+.responsive-iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+    z-index: -100;
+}
+
+/**********************
+* menu
+***********************/
+.menu-container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    position: absolute;
+    width: 74.95%;
+    height: auto;
+    /*margin-top: 50px;*/
+}
+
+.menu-logo img {
+    height: 125px;
+    margin-bottom: 25px;
+    width: auto;
+}
+
+/**********************
+* setting
+***********************/
+.menu-setting {
+    display: flex;
+    justify-content: flex-end;
+    width: 75%;
+    z-index: 20;
+    transition: ease all .5s;
+}
+
+.menu-setting-img {
+    height: 50px;
+    padding-top: 20px;
+    cursor: pointer;
+    opacity: 0.85;
+    z-index: 10;
+}
+
+.menu-setting img:hover {
+    opacity: 0.55;
+}
+
+.menu-help {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    z-index: 10;
+    transition: ease all .5s;
+}
+
+.menu-help-img {
+    height: 50px;
+    padding-top: 20px;
+    cursor: pointer;
+    opacity: 0.85;
+    z-index: 10;
+}
+
+.menu-help img:hover {
+    opacity: 0.55;
+}
+
+/**********************
+* setting open
+***********************/
+.setting {
+    /*display: var(--setting-display);*/
+    display: flex;
+    flex-direction: column;
+    width: 45%;
+    margin: 40px 0 40px 0;
+    padding: 20px;
+    height: auto;
+    border: 4px solid #FCF0CC;
+    border-radius: 25px;
+    background-color: #28536B;
+    opacity: 1;
+    z-index: 25;
+    position: absolute;
+    transition: ease all .5s;
+    opacity: 0.95;
+    filter: drop-shadow(0 0 1.25rem #FCF0CC);
+    animation: fadeSetting 1s;
+}
+
+.setting-logo {
+    display: flex;
+    justify-content: center;
+    transition: ease all .5s;
+}
+
+.setting-logo img {
+    margin-top: 15px;
+    height: 65px;
+    width: auto;
+    text-align: center;
+    transition: ease all .5s;
+}
+
+.setting-quit-img {
+    display: flex;
+    justify-content: center;
+    transition: ease all .5s;
+}
+
+.setting-quit-img img {
+    height: 50px;
+    width: auto;
+    text-align: center;
+    cursor: pointer;
+}
+
+.quit-button {
+    cursor: pointer;
+}
+
+.theme-container {
+    margin: 0 50px 25px 50px;
+    transition: ease all .5s;
+}
+
+.theme-container h3 {
+    font-family: 'BebasNeue-Regular', sans-serif;
+    font-size: 1.5rem;
+    letter-spacing: 2px;
+    margin: 10px 0 20px 0;
+    color: white;
+    transition: ease all .5s;
+}
+
+.theme-button {
+    display: flex;
+    justify-content: space-around;
+}
+
+.theme-button img {
+    display: flex;
+    justify-content: center;
+    height: 100px;
+    width: auto;
+    text-align: center;
+    cursor: pointer;
+    transition: ease all .5s;
+}
+
+
+
+/**********************
+* setting volume
+***********************/
+.setting-volume {
+    margin: 10px 50px 10px 50px;
+}
+
+.setting-volume h3 {
+    font-family: 'BebasNeue-Regular', sans-serif;
+    font-size: 1.5rem;
+    letter-spacing: 2.5px;
+    margin: 10px 0 10px 0;
+    color: white;
+}
+
+.slidecontainer i {
+    color: #EF798A;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+.slidecontainer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 15px 0 15px 0;
+}
+
+.slider {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 75%;
+    height: 5px;
+    background: #d3d3d3;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+}
+  
+/* Mouse-over effects */
+.slider:hover {
+    opacity: 1; /* Fully shown on mouse-over */
+}
+  
+/* slider for chrome/brave etc... */
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    background: #EF798A;
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+/* slider for mozilla */
+.slider::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    background: #EF798A;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: ease all .5s;
+}
+
+/**********************
+* menu bouton
+***********************/
+.menu-bouton {
+    display: flex;
+    flex-direction: column;
+    z-index: 10;
+    transition: ease all .5s;
+}
+
+.menu-bouton button {
+    margin: 20px 0 20px 0;
+}
+
+.menu-bouton img {
+    height: 75px;
+    margin: 15px 0 15px 0;
+    transition: ease all .5s;
+}
+
+.menu-bouton img:hover {
+    cursor: pointer;
+}
+
+/**********************
+* difficulty
+***********************/
+.difficulty-container {
+    height: var(--difficulty-popup-height);
+    width: var(--difficulty-popup-width);
+    z-index: 1000;
+    transition: ease all .5s;
+}
+
+.difficulty-border {
+    height: var(--difficulty-popup-height);
+    width: var(--difficulty-popup-width);
+    margin: auto;
+    background-color: #28536B;
+    border-radius: 25px;
+    animation: fadeIn 1s;
+    transition: ease all .5s; 
+    filter: drop-shadow(0 0 1.25rem #FCF0CC);
+}
+
+.difficulty-line {
+    width: 75%;
+    border-top: 2px solid #FCF0CC;
+    border-radius: 25px;
+    margin: 0 auto 50px auto;
+    text-align: center;
+}
+
+.difficulty-txt {
+    height: var(--difficulty-popup-height);
+    transition: ease all .5s;
+}
+
+.difficulty-txt h1 {
+    text-align: center;
+    font-size: 4rem;
+    letter-spacing: 1.75px;
+    color: #FCF0CC;
+    font-family: "BebasNeue-Regular", sans-serif;
+    transition: ease all .5s;
+    padding: 65px 0 0;
+}
+
+.difficulty-txt h2 {
+    text-align: center;
+    font-size: 3rem;
+    letter-spacing: 1.75px;
+    color: #FCF0CC;
+    font-family: "BebasNeue-Regular", sans-serif;
+    transition: ease all .5s;
+}
+
+.difficulty-txt p {
+    text-align: center;
+    font-size: 1.45rem;
+    margin: 10px 0;
+    padding: 0 25px 0 25px;
+    color: #FCF0CC;
+    font-family: "Roboto-Light", sans-serif;
+    transition: ease all .5s; 
+}
+
+.difficulty-btn {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 30px 0;
+}
+
+.difficulty-btn img {
+    width: auto;
+    height: 75px;
+    cursor: pointer;
+}
+
+.game-setting {
+    margin-top: 25px 0 25px 0;
+    transition: ease all .5s;
+}
+
+.game-setting h3 {
+    font-family: "BebasNeue-Regular", sans-serif;
+    color: #FCF0CC;
+    font-size: 2.5rem;
+    letter-spacing: 3px;
+    text-align: center;
+}
+
+.game-setting-button {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    transition: ease all .5s;
+}
+
+.game-setting-button img {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    transition: ease all .5s;
+    height: 100px;
+    width: auto;
+    cursor: pointer;
+}
+
+.custom-container img {
+    cursor: pointer;
+}
+
+.custom-container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.custom-container input {
+    width: 65%;
+    margin: 15px 50px 15px 50px;
+    padding: 0 25px;
+    background-color: #2c3c54;
+    border: 0;
+    border-radius: 25px;
+    color: wheat;
+    font-family: "Roboto-Regular", sans-serif;
+    height: 35px;
+}
+
+#load-game-error {
+    font-size: 1.25rem;
+    color: #e74c3c;
+    font-family: "Roboto-Regular", sans-serif;
+    transition: ease all .5s; 
+}
+
+.load-custom-game img {
+    width: auto;
+    height: 75px;
+    cursor: pointer;
+    transition: ease all .5s; 
+}
+
+/**********************
+* user is on mobile device
+***********************/
+.lvl-container {
+    position: absolute;
+    background-color: #28536B;
+    border-radius: 15px;
+    height: auto;
+    left: 25%;
+    right: 25%;
+    top: 25%;
+    border: 4px solid #FCF0CC;
+    filter: drop-shadow(0 0 1.25rem #FCF0CC);
+    z-index: 200;
+}
+
+.lvl-container p {
+    text-align: center;
+    font-size: 1rem;
+    margin: 10px 0;
+    padding: 0 25px 0 25px;
+    color: #FCF0CC;
+    font-family: "Roboto-Light", sans-serif;
+    transition: ease all .5s; 
+}
+
+.lvl-border {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: 20px;
+}
+
+.lvl-txt h1 {
+    text-align: center;
+    font-size: 3rem;
+    letter-spacing: 1.75px;
+    color: #FCF0CC;
+    font-family: "BebasNeue-Regular", sans-serif;
+    transition: ease all .5s;
+}
+
+.lvl-story {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.lvl-game {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+
+}
+
+.lvl-story-img {
+    height: 35px;
+    margin: 25px;
+    cursor: pointer;
+}
+
+.lvl-game-img {
+    height: 50px;
+    width: 75%;
+    cursor: pointer;
+    margin: 20px; 
+}
+
+.type-username-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.type-username-container input {
+    width: 75%;
+    margin: 10px;
+    padding: 0 25px;
+    background-color: #2c3c54;
+    border: 2px solid #FCF0CC;
+    border-radius: 25px;
+    color: #FCF0CC;
+    font-family: "Roboto-Regular", sans-serif;
+    height: 35px;
+    animation: fadeIn .1s;
+}
+
+#username-button {
+    height: 50px;
+    width: 25%;
+    margin: 15px;
+    background-color: inherit;
+    border-radius: 15px;
+    color: #FCF0CC;
+    font-family: "BebasNeue-Regular", sans-serif;
+    font-size: 1.25rem;
+}
+
+.red-border {
+    border-color: #e74c3c;
+}
+
+/**********************
+* user is on mobile device
+***********************/
+.mobile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+    margin: 100px 0 100px 0;
+    transition: ease all .5s;
+}
+
+.mobile p {
+    width: 75%;
+    font-size: 1.25rem;
+    color:#FCF0CC;
+    font-family: 'Roboto-Light', sans-serif;
+    text-align: center;
+}
+
+.error-h2 {
+    font-size: 1.75rem;
+    color:#FCF0CC;
+    font-family: 'Roboto-Regular', sans-serif;
+    margin: 0;
+}
+
+.error-line {
+    width: 100%;
+    border-top: 2px solid #FCF0CC;
+    border-radius: 25px;
+}
+
+/**********************
+* game
+***********************/
+.game-section {
+    display: flex;
+    height: auto;
+    transition: ease all .5s;
+    /*background-color: rgba(126, 168, 190, 0.65);
+    border: 5px dotted #FCF0CC;
+    border-radius: 25px;*/
+}
+
+.canvas {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 25;
+}
+
+canvas {/* Style de la zone de jeu */
+    border-radius: 5px;
+}
+
+#demo, #track {
+    visibility: visible;
+}
+
+#count4, #count8, #nbDeCoups, #nbDeMorts {
+    color: #FCF0CC;
+    display: flex;
+    justify-content: center;
+}
+
+.score-display {
+    padding: 10px;
+    flex-grow: 2;
+    transition: ease all .5s;
+}
+
+.score-display h3 {
+    font-family: "BebasNeue-Regular", sans-serif;
+    color: #FCF0CC;
+    font-size: 2.5rem;
+    letter-spacing: 3.5px;
+    text-align: center;
+    margin: 25px 0 15px 0; 
+}
+
+.info-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: ease all .5s;
+}
+
+.info-bomb-4 {
+    background-image: url("../img/web/bomb-4.png");
+    background-position: center;
+    background-size: cover;
+    width: 170px;
+}
+
+.info-bomb-8 {
+    background-image: url("../img/web/bomb-8.png");
+    background-position: center;
+    background-size: cover;
+    width: 170px;
+}
+
+.info-dead {
+    background-image: url("../img/web/dead.png");
+    background-position: center;
+    background-size: cover;
+    width: 170px;
+}
+
+.info-score {
+    background-image: url("../img/web/score.png");
+    background-position: center;
+    background-size: cover;
+    width: 170px;
+}
+
+.info-txt {
+    font-size: 4rem;
+    color: #FCF0CC;
+    font-family: "BebasNeue-Regular", sans-serif;
+    margin: 35px 0 35px 0;
+    transition: ease all .5s;
+}
+
+/**********************
+* help
+***********************/
+.help-popup-container {
+    position: absolute;
+    width: 75%;
+    height: var(--help-popup-height);
+    z-index: 1000;
+    transition: ease all .5s;
+}
+
+.help-popup-border {
+    height: var(--help-popup-height);
+    width: var(--help-popup-width);
+    margin: auto;
+    background-color: #28536B;
+    /*border: 1px solid white;*/
+    border-radius: 25px;
+    filter: drop-shadow(0 0 1.25rem #FCF0CC);
+    animation: fadeIn 1s;
+    transition: ease all .5s;
+}
+
+
+/*
+*   HELP ABOUT GAME 
+*/
+.help-about-game, .help-about-editor {
+    padding: 35px;
+}
+
+.help-title {
+    display: flex;
+    align-items: center;
+}
+
+.help-title h3 {
+    flex-grow: 2;
+    font-size: 2.5rem;
+    letter-spacing: 1.5px;
+    color: #FCF0CC;
+    font-family: "BebasNeue-Regular", sans-serif;
+    transition: ease all .5s;
+}
+
+.help-title svg {
+    height: 50px;
+    width: auto;
+    cursor: pointer;
+}
+
+/*
+*   HELP ABOUT EDITOR 
+*/
+
+
+/*
+*   Tutorial
+*/
+.tutorial-video {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 50px 0 50px 0;
+}
+
+.tutorial-video-popup {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 15px 0 15px 0;
+}
+
+/**********************
+* utils
+***********************/
+.pad-25 {
+    padding: 25px 25px 25px 25px;
+}
+
+.padr-15 {
+    padding-right: 15px;
+}
+
+.background-change {
+    background-color: #34495e;
+}
+
+.display-none {
+    display: none;
+}
+
+.flex {
+    display: flex;
+}
+
+.ind30 {
+    z-index: 30;
+}
+
+/**********************
+* animations
+***********************/
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes fadeSetting {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0.95;
+    }
+}
+
+/**********************
+* responsive
+***********************/
+@media screen and (max-width: 1525px){
+    .game-section {
+        flex-direction: column;
+    }
+    .menu-bouton img {
+        margin: 10px 0 10px 0;
+    }
+    .setting-logo img {
+        height: 50px;
+    }
+    .theme-button img {
+        height: 75px;
+    }
+    .setting h3 {
+        font-size: 1.15rem;
+    }
+    .setting-quit-img img {
+        height: 30px;
+    }
+    .setting-volume {
+        margin: 5px 50px 5px 50px;
+    }
+}
+
+@media screen and (max-width: 1375px){
+    .menu-bouton img {
+        margin: 5px 0 5px 0;
+    }
+}
+
+@media only screen and (max-width: 1600px) {
+    .difficulty-txt p {
+        font-size: 1.25rem;
+    }
+    .difficulty-btn img {
+        height: 65px;
+    }
+    .load-custom-game img {
+        height: 65px;
+    }
+    .difficulty-txt h1 {
+        padding: 50px 0 0;
+    }
+    .difficulty-btn {
+        margin: 50px 0;
+    }
+    #load-game-error {
+        font-size: 1.1rem;
+    }
+}
+
+/***************
+* Polices
+****************/
+@font-face {
+    font-family: 'BebasNeue-Regular';
+    src: url("../fonts/BebasNeue-Regular.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: 'Roboto-Regular';
+    src: url("../fonts/RobotoCondensed-Regular.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: 'Roboto-Light';
+    src: url("../fonts/RobotoCondensed-Light.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: 'Pattaya-Regular';
+    src: url("../fonts/Pattaya-Regular.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: 'OpenSans-Regular';
+    src: url('../fonts/OpenSans-Regular.ttf') format("truetype"); 
+  }

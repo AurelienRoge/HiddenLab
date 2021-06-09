@@ -1,0 +1,130 @@
+/*******************************************************
+*  editor.css                                           
+********************************************************/
+
+
+/**********************
+* editor main
+***********************/
+#map {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 20;
+}
+
+.editor-section {
+    display: flex;
+    height: auto;
+    transition: ease all .5s;
+}
+
+
+/**********************
+* editor aside
+***********************/
+.editor-display {
+  /*padding: 10px 0 10px 20px;*/
+  padding: 10px;
+  flex-grow: 2;
+}
+
+.editor-button-container img:hover {
+  cursor: pointer;
+}
+
+.editor-display h3 {
+  font-family: "BebasNeue-Regular", sans-serif;
+  color: wheat;
+  font-size: 2.5rem;
+  letter-spacing: 3.5px;
+  text-align: center;
+  margin: 15px 0 15px 0; 
+}
+
+/**********************
+* text to copy
+***********************/
+#textToCopy {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+#textToCopy input {
+  width: 100%;
+  margin: 15px 50px 15px 50px;
+  padding: 0 25px;
+  background-color: #2c3c54;
+  border: 0;
+  border-radius: 25px;
+  color: wheat;
+  font-family: "Roboto-Regular", sans-serif;
+  height: 35px;
+}
+
+/**********************
+* editor size
+***********************/
+.editor-button-size img {
+  height: 75px;
+  width: auto;
+}
+
+.editor-button {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.editor-button-build {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.editor-button-size {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.info-size-txt {
+  position: absolute;
+  font-size: 2rem;
+  color: wheat;
+  font-family: "BebasNeue-Regular", sans-serif;
+}
+
+.editor-button-size img {
+  height: 75px;
+  width: auto;
+}
+
+/**********************
+* utils
+***********************/
+.editor-img {
+  height: 150px;
+  width: auto;
+  cursor: pointer;
+  transition: ease all .5s;
+}
+
+/**********************
+* responsive
+***********************/
+@media screen and (max-width: 1800px){
+  .editor-img {
+      height: 115px;
+  }
+}
+
+@media screen and (max-width: 1525px){
+  .editor-section {
+      flex-direction: column;
+  }
+  .editor-img {
+    height: 150px;
+  }
+}

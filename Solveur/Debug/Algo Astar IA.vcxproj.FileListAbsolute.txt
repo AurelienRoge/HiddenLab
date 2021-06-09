@@ -1,0 +1,6 @@
+C:\Users\Administrateur\source\repos\Algo Astar IA\Debug\Algo Astar IA.exe
+C:\Users\Administrateur\source\repos\Algo Astar IA\Debug\Algo Astar IA.pdb
+C:\Users\Administrateur\Documents\GitHub\HiddenLabyrinth\Algo Astar IA\Debug\Algo Astar IA.exe
+C:\Users\Administrateur\Documents\GitHub\HiddenLabyrinth\Algo Astar IA\Debug\Algo Astar IA.pdb
+C:\Users\aurel\Documents\GitHub\HiddenLabyrinth\Algo Astar IA\Debug\Algo Astar IA.exe
+C:\Users\aurel\Documents\GitHub\HiddenLabyrinth\Algo Astar IA\Debug\Algo Astar IA.pdb
